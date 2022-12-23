@@ -1,0 +1,169 @@
+.gogo-login-header {
+  width: 1170px;
+  height: 132px;
+  margin: 0 auto;
+}
+
+.gogo-login-header .logo {
+  width: 200px;
+  height: 132px;
+  text-indent: -999px;
+  background-image: url(../images/logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.gogo-login-header .home {
+  float: right;
+  margin-top: 82px;
+  font-size: 16px;
+  padding-right: 24px;
+}
+
+.gogo-login-main {
+  height: 488px;
+  background-color: #f2f2f2;
+}
+
+.gogo-login-main .wrapper {
+  width: 1170px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 61px;
+}
+
+.gogo-login-main .wrapper .box {
+  width: 380px;
+  box-shadow: 0px 0px 25px 0px rgba(3, 3, 3, 0.14);
+  background: #fff;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
+
+.gogo-login-main .wrapper .box .tab-nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.gogo-login-main .wrapper .box .tab-nav::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  width: 1px;
+  height: 20px;
+  background: #ededed;
+}
+
+.gogo-login-main .wrapper .box .tab-nav a {
+  font-size: 18px;
+  height: 35px;
+  line-height: 35px;
+}
+
+.gogo-login-main .wrapper .box .tab-nav a.active {
+  border-bottom: 2px solid #febd40;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .code {
+  display: block;
+  margin: 44px auto;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .link {
+  text-align: right;
+  padding-top: 12px;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .link a {
+  color: #febd40;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .input {
+  border: 1px solid #febd40;
+  width: 100%;
+  height: 36px;
+  margin-top: 17px;
+  display: flex;
+  background: #CFCDCD;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .input .iconfont {
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  line-height: 34px;
+  font-size: 20px;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .input input {
+  flex: 1;
+  padding-left: 15px;
+  background: #fff;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .input input::placeholder {
+  color: #B3B3B3 !important;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .agree {
+  color: #B3B3B3;
+  padding: 17px 0;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .agree a {
+  color: #0673B1;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .agree > label input {
+  /* display: none; */
+}
+
+.gogo-login-main .wrapper .box .tab-pane .agree > label input:checked + span {
+  color: #febd40;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .button {
+  margin-bottom: 15px;
+}
+
+.gogo-login-main .wrapper .box .tab-pane .button .dl {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #febd40;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 17px;
+}
+
+.gogo-login-footer .copyright {
+  height: 115px;
+  padding-top: 40px;
+  text-align: center;
+  color: #999;
+  font-size: 15px;
+}
+
+.gogo-login-footer .copyright p {
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.gogo-login-footer .copyright a {
+  color: #999;
+  line-height: 1;
+  padding: 0 10px 0 6px;
+  border-right: 1px solid #999;
+}
+
+.gogo-login-footer .copyright a:last-child {
+  border-right: none;
+}

@@ -1,0 +1,796 @@
+@charset "UTF-8";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/** 分类及焦点图 **/
+.gogo_entry {
+  height: 500px;
+  background-color: #f2f2f2;
+  position: relative;
+}
+.gogo_banner {
+  width: 1240px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gogo_banner:hover a {
+  opacity: 1;
+}
+
+.gogo_banner>a {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-top: -22px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+}
+
+.gogo_banner>a.prev {
+  left: 20px;
+  background-position: 14px -59px;
+}
+
+.gogo_banner>a.next {
+  right: 20px;
+  background-position: -24px -59px;
+}
+
+.gogo_banner .indicator {
+  width: 990px;
+  text-align: center;
+  font-size: 0;
+  position: absolute;
+  left: 125px;
+  bottom: 22px;
+}
+
+.gogo_banner .indicator span {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin: 0 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.43);
+}
+
+.gogo_banner .indicator span.active {
+  background-color: #fff;
+}
+
+.gogo_banner ul li {
+  position: absolute;
+  opacity: 0;
+  transition: all .5s;
+} 
+
+.gogo_banner ul li.active {
+  opacity: 1;
+} 
+/** 公共面板 **/
+.gogo_panel .gogo_panel_header {
+  height: 115px;
+  padding: 40px 0;
+}
+
+.gogo_panel .gogo_panel_header h3 {
+  height: 35px;
+  line-height: 35px;
+  margin-left: 6px;
+  font-size: 32px;
+  font-weight: 400;
+  color: #333;
+  float: left;
+}
+
+.gogo_panel .gogo_panel_header small {
+  margin-left: 22px;
+  font-size: 16px;
+  color: #999;
+}
+
+.gogo_panel .gogo_panel_header .more {
+  line-height: 1;
+  margin-top: 14px;
+  font-size: 16px;
+  color: #999;
+  float: right;
+}
+
+.gogo_panel .gogo_panel_header .more i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 1px;
+  background-position: 8px -106px;
+}
+
+.gogo_panel .gogo_panel_header .tabs-bar {
+  height: 35px;
+  padding-top: 13px;
+  font-size: 16px;
+  margin-right: 80px;
+  float: right;
+}
+
+.gogo_panel .gogo_panel_header .tabs-bar a {
+  padding: 2px 8px;
+  margin-left: 5px;
+  border-radius: 2px;
+}
+
+.gogo_panel .gogo_panel_header .tabs-bar a:hover,
+.gogo_panel .gogo_panel_header .tabs-bar a.active {
+  background-color: #febd40;
+  color: #fff;
+}
+
+.gogo_panel .gogo_panel_goods_1 {
+  text-align: justify;
+  font-size: 0;
+}
+
+.gogo_panel .gogo_panel_goods_1:after {
+  content: "";
+  display: inline-block;
+  width: 306px;
+  height: 0;
+}
+
+.gogo_panel .gogo_panel_goods_1 a {
+  display: inline-block;
+  width: 306px;
+  height: 406px;
+  text-align: center;
+}
+
+.gogo_panel .gogo_panel_goods_1 img {
+  width: 306px;
+  height: 306px;
+}
+
+.gogo_panel .gogo_panel_goods_2 {
+  height: 610px;
+}
+
+.gogo_panel .gogo_panel_goods_2 li {
+  width: 240px;
+  height: 300px;
+  padding-top: 10px;
+  margin-left: 10px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  overflow: hidden;
+  transition: 0.3s;
+  position: relative;
+  float: left;
+}
+
+.gogo_panel .gogo_panel_goods_2 li:hover {
+  border-color: #febd40;
+}
+
+.gogo_panel .gogo_panel_goods_2 li:hover .extra {
+  bottom: 0;
+}
+
+.gogo_panel .gogo_panel_goods_2 li:first-child {
+  height: 610px;
+  padding-top: 0;
+  margin-left: 0;
+  border: 0;
+}
+
+.gogo_panel .gogo_panel_goods_2 li:nth-last-child(-n + 4) {
+  margin-top: 10px;
+}
+
+.gogo_panel .gogo_panel_goods_2 a {
+  display: block;
+}
+
+.gogo_panel .gogo_panel_goods_2 .img-box {
+  width: 240px;
+  height: 160px;
+  padding: 0 33px;
+  text-align: center;
+  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.gogo_panel .gogo_panel_goods_2 .meta {
+  height: 130px;
+  line-height: 1.3;
+  padding: 10px 22px 0;
+  font-size: 19px;
+  position: relative;
+}
+
+.gogo_panel .gogo_panel_goods_2 .name {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.gogo_panel .gogo_panel_goods_2 .price {
+  font-size: 22px;
+  color: #CF4444;
+  position: absolute;
+  bottom: 10px;
+}
+
+.gogo_panel .gogo_panel_goods_2 .price small {
+  font-size: 17px;
+}
+
+.gogo_panel .gogo_panel_goods_2 .extra {
+  width: 100%;
+  height: 86px;
+  padding-top: 10px;
+  transition: bottom 0.3s;
+  background-color: #febd40;
+  position: absolute;
+  bottom: -86px;
+}
+
+.gogo_panel .gogo_panel_goods_2 .extra span {
+  display: block;
+  width: 124px;
+  line-height: 1;
+  padding: 9px 0 8px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 19px;
+  color: #fff;
+}
+
+.gogo_panel .gogo_panel_goods_2 .extra span:last-child {
+  font-size: 13px;
+  border-top: 1px solid #fff;
+}
+
+.gogo_panel .gogo_panel_goods_2 .label {
+  position: absolute;
+  left: 0;
+  bottom: 266px;
+  width: 188px;
+  height: 66px;
+  text-align: center;
+  line-height: 66px;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 0 2px 2px 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.gogo_panel .gogo_panel_goods_2 .label span:first-child {
+  display: block;
+  width: 76px;
+  background-color: #000;
+}
+
+.gogo_panel .gogo_panel_goods_2 .label span:last-child {
+  width: 112px;
+  line-height: 1.4;
+  transform: translate(0, -50%);
+  position: absolute;
+  left: 76px;
+  right: 0;
+  top: 50%;
+}
+
+/** 新鲜好物 **/
+.gogo_goods_new .gogo_panel_goods_1 a {
+  background-color: rgba(254, 189, 64, .1);
+  transition: 0.5s;
+  position: relative;
+  top: 0;
+}
+
+.gogo_goods_new .gogo_panel_goods_1 a:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  top: -3px;
+}
+
+.gogo_goods_new .gogo_panel_goods_1 .name {
+  display: inline-block;
+  width: 100%;
+  margin: 12px 0 10px;
+  font-size: 22px;
+}
+
+.gogo_goods_new .gogo_panel_goods_1 .price {
+  font-size: 23px;
+  color: #CF4444;
+}
+
+.gogo_goods_new .gogo_panel_goods_1 small {
+  font-size: 16px;
+}
+
+/** 人气推荐 **/
+.gogo_goods_popular {
+  padding-bottom: 42px;
+}
+
+.gogo_goods_popular .gogo_panel_goods_1 a {
+  transition: 0.5s;
+}
+
+.gogo_goods_popular .gogo_panel_goods_1 a:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transform: translate(0, -3px);
+}
+
+.gogo_goods_popular .gogo_panel_goods_1 .title {
+  display: inline-block;
+  width: 100%;
+  line-height: 1;
+  margin: 20px 0 16px;
+  font-size: 22px;
+}
+
+.gogo_goods_popular .gogo_panel_goods_1 .alt {
+  font-size: 18px;
+  color: #999;
+}
+
+/** 热门品牌 **/
+.gogo_goods_brand {
+  padding-bottom: 32px;
+  background-color: #f5f5f5;
+}
+
+/* .gogo_goods_brand .page-bar {
+  float: right;
+}
+
+.gogo_goods_brand .page-bar a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  margin-top: 10px;
+  background-color: #e2e2e2;
+}
+
+.gogo_goods_brand .page-bar a:hover,
+.gogo_goods_brand .page-bar a.active {
+  background-color: #febd40;
+}
+
+.gogo_goods_brand .page-bar .prev {
+  margin-right: 5px;
+  background-position: -32px -106px;
+  transform: rotate(180deg);
+}
+
+.gogo_goods_brand .page-bar .next {
+  background-position: -32px -106px;
+} */
+
+.gogo_goods_brand .gogo_goods {
+  height: 305px;
+}
+
+.gogo_goods_brand .gogo_goods li {
+  float: left;
+  font-size: 0;
+}
+
+.gogo_goods_brand .gogo_goods a {
+  margin-right: 10px;
+}
+
+.gogo_goods_brand .gogo_goods a img {
+  width: 240px;
+  height: 305px;
+}
+
+.gogo_goods_brand .gogo_goods a:last-child {
+  margin-right: 0;
+}
+
+/** 生鲜 **/
+.gogo_goods_category {
+  padding-bottom: 80px;
+}
+
+/** 最新主题 **/
+.gogo_goods_topic {
+  background-color: #f5f5f5;
+  padding-bottom: 52px;
+}
+
+.gogo_goods_topic li {
+  width: 406px;
+  margin-left: 11px;
+  transition: 0.5s;
+  float: left;
+  background: white;
+}
+
+.gogo_goods_topic li:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transform: translate(0, -3px);
+}
+
+.gogo_goods_topic li:first-child {
+  margin-left: 0;
+}
+
+.gogo_goods_topic li a {
+  display: block;
+  height: 287px;
+  position: relative;
+}
+
+.gogo_goods_topic .meta {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 50%);
+  position: absolute;
+  bottom: 0;
+}
+
+.gogo_goods_topic .meta .title {
+  height: 70px;
+  padding-left: 16px;
+  font-size: 22px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.gogo_goods_topic .meta .title small {
+  display: block;
+  font-size: 19px;
+  color: #999;
+}
+
+.gogo_goods_topic .meta .price {
+  position: absolute;
+  bottom: 25px;
+  right: 16px;
+  display: block;
+  line-height: 1;
+  padding: 4px 8px 4px 7px;
+  color: #CF4444;
+  font-size: 17px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.gogo_goods_topic .meta .price small {
+  font-size: 15px;
+}
+
+.gogo_goods_topic .social {
+  height: 70px;
+  line-height: 70px;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+.gogo_goods_topic .social i {
+  display: inline-block;
+  width: 15px;
+  height: 14px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+
+.gogo_goods_topic .social .like,
+.gogo_goods_topic .social .liked,
+.gogo_goods_topic .social .view {
+  float: left;
+  margin-right: 25px;
+}
+
+.gogo_goods_topic .social .reply {
+  float: right;
+}
+
+.gogo_goods_topic .social .like i {
+  background-position: -120px -110px;
+}
+
+.gogo_goods_topic .social .liked i {
+  background-position: -240px -110px;
+}
+
+.gogo_goods_topic .social .view i {
+  background-position: -160px -110px;
+}
+
+.gogo_goods_topic .social .reply i {
+  width: 17px;
+  height: 16px;
+  top: 4px;
+  background-position: -200px -110px;
+}
+
+.gogo-wrapper {
+  background: #f5f5f5;
+  line-height: 1.4;
+}
+
+.gogo-wrapper .container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.gogo-wrapper .container .title {
+  height: 215px;
+  line-height: 215px;
+  font-size: 32px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.gogo-bg-title {
+  width: 100%;
+  height: 180px;
+  padding-left: 213px;
+  background: no-repeat center / cover;
+}
+
+.gogo-bg-title h4 {
+  padding-top: 52px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.gogo-bg-title p {
+  padding-top: 5px;
+  font-size: 20px;
+}
+
+.gogo-large-product {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gogo-large-product .item {
+  width: 610px;
+  height: 420px;
+  background: white;
+  position: relative;
+}
+
+.gogo-large-product .item img {
+  width: 100%;
+  height: 320px;
+  display: block;
+}
+
+.gogo-large-product .item p {
+  padding-left: 55px;
+}
+
+.gogo-large-product .item p.tit {
+  padding-top: 22px;
+  font-size: 16px;
+}
+
+.gogo-large-product .item p.desc {
+  padding-top: 12px;
+  color: #999;
+  font-size: 14px;
+}
+
+.gogo-large-product .item .price {
+  position: absolute;
+  bottom: 37px;
+  right: 33px;
+  color: #CF4444;
+  font-size: 18px;
+}
+
+.gogo-large-product .item .tag {
+  width: 170px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  position: absolute;
+  top: 17px;
+  left: 15px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+}
+
+.gogo-mini-product {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.gogo-mini-product ul li {
+  width: 232px;
+  height: 320px;
+  float: left;
+  background: white;
+  margin-right: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gogo-mini-product ul li:nth-child(5n) {
+  margin-right: 0;
+}
+
+.gogo-mini-product ul li img {
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin: 22px auto 0;
+}
+
+.gogo-mini-product ul li .tit {
+  padding-top: 23px;
+  font-size: 16px;
+}
+
+.gogo-mini-product ul li .desc {
+  padding-top: 12px;
+  color: #999;
+}
+
+.gogo-mini-product ul li .price {
+  font-size: 18px;
+  color: #CF4444;
+  padding-top: 16px;
+}
+
+.gogo-simpla-title {
+  height: 40px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.gogo-large-brand {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.gogo-large-brand .item {
+  width: 610px;
+  height: 480px;
+  background: white;
+  margin-bottom: 40px;
+}
+
+.gogo-large-brand .item img {
+  width: 100%;
+  height: 320px;
+  display: block;
+}
+
+.gogo-large-brand .item .info {
+  padding: 0 35px;
+  position: relative;
+}
+
+.gogo-large-brand .item .info p.name {
+  padding-top: 22px;
+  padding-bottom: 12px;
+  font-size: 20px;
+}
+
+.gogo-large-brand .item .info p.name i {
+  width: 36px;
+  height: 18px;
+  line-height: 18px;
+  background: #febd40;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+}
+
+.gogo-large-brand .item .info p.desc {
+  color: #999;
+  font-size: 14px;
+  height: 40px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-right: 40px;
+}
+
+.gogo-large-brand .item .info .price {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #CF4444;
+  font-size: 18px;
+}
+
+.gogo-large-brand .item .comment {
+  padding: 15px 35px 0;
+  line-height: 40px;
+  color: #999;
+}
+
+.gogo-large-brand .item .comment .line {
+  width: 100%;
+  height: 1px;
+  background: #E4E4E4;
+}
+
+.gogo-large-brand .item .comment .red {
+  color: #CF4444;
+}
+
+.gogo-large-brand .item .comment .mr18 {
+  margin-right: 18px;
+}
+
+.gogo-elevator {
+  position: fixed;
+  left: 50%;
+  top: 280px;
+  z-index: 999;
+  margin-left: 640px;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.gogo-elevator .gogo-elevator-list {
+  width: 60px;
+  height: 300px;
+  background: #fff;
+  float: right;
+  border: 1px solid #f5f5f5;
+  position: relative;
+}
+
+.gogo-elevator .gogo-elevator-list li {
+  height: 60px;
+  padding: 15px;
+}
+
+.gogo-elevator .gogo-elevator-list li a {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.gogo-elevator .gogo-elevator-list li a:hover,
+.gogo-elevator .gogo-elevator-list li a.current {
+  color: #febd40;
+}
+
+.gogo-elevator .gogo-elevator-list li a i {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  left: 4px;
+  background-position: 8px -106px;
+  font-size: 20px;
+  transform: rotate(-90deg);
+}

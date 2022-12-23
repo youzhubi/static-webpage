@@ -1,0 +1,752 @@
+.gogo-wrapper {
+  background: #f5f5f5;
+  line-height: 1.4;
+}
+
+.gogo-wrapper .container {
+  width: 1240px;
+  margin: 0 auto;
+  padding: 20px 0 40px;
+}
+
+.gogo-bread {
+  padding: 10px 0 25px 25px;
+}
+
+.gogo-bread a {
+  color: #999;
+  padding-right: 5px;
+}
+
+.gogo-bread a:hover {
+  color: #febd40;
+}
+
+.gogo-product-info {
+  background: #fff;
+  display: flex;
+  min-height: 580px;
+}
+
+.gogo-product-info .left {
+  width: 580px;
+  padding: 30px 50px;
+}
+
+.gogo-product-info .left .picture {
+  width: 480px;
+  height: 400px;
+  display: flex;
+  position: relative;
+}
+
+.gogo-product-info .left .picture .middle {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+.gogo-product-info .left .picture .middle .layer {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: move;
+}
+
+.gogo-product-info .left .picture .large {
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: absolute;
+  left: 412px;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  display: none;
+  background-size: 800px 800px;
+}
+
+.gogo-product-info .left .picture .middle img {
+  width: 100%;
+  height: 100%;
+}
+
+.gogo-product-info .left .picture .small {
+  width: 80px;
+  height: 400px;
+}
+
+.gogo-product-info .left .picture .small ul li {
+  width: 68px;
+  height: 68px;
+  margin-bottom: 15px;
+  margin-left: 12px;
+  border: 2px solid transparent;
+}
+
+.gogo-product-info .left .picture .small ul li img {
+  width: 100%;
+  height: 100%;
+}
+
+.gogo-product-info .left .picture .small ul li.active, .gogo-product-info .left .picture .small ul li:hover {
+  border-color: #febd40;
+}
+
+.gogo-product-info .left .other {
+  margin-top: 20px;
+}
+
+.gogo-product-info .left .other ul {
+  display: flex;
+  width: 400px;
+}
+
+.gogo-product-info .left .other ul li {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  line-height: 32px;
+}
+
+.gogo-product-info .left .other ul li::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 0;
+  height: 70px;
+  border-right: 1px solid #e4e4e4;
+}
+
+.gogo-product-info .left .other ul li:last-child::before {
+  display: none;
+}
+
+.gogo-product-info .left .other ul li p:first-child {
+  color: #999;
+}
+
+.gogo-product-info .left .other ul li p:nth-child(2) {
+  color: #CF4444;
+}
+
+.gogo-product-info .right {
+  width: 660px;
+  padding-top: 30px;
+}
+
+.gogo-product-info .right h3 {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.gogo-product-info .right .desc {
+  padding-top: 10px;
+  color: #999;
+}
+
+.gogo-product-info .right .price {
+  padding: 10px 0;
+}
+
+.gogo-product-info .right .price .now {
+  color: #CF4444;
+  margin-right: 5px;
+  font-size: 22px;
+}
+
+.gogo-product-info .right .price .old {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 18px;
+}
+
+.gogo-product-info .right .address {
+  width: 510px;
+  background: #f9f9f9;
+  padding: 0 10px 20px;
+}
+
+.gogo-product-info .right .address .fw {
+  position: relative;
+  padding: 0 15px 0 10px;
+}
+
+.gogo-product-info .right .address .fw::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #febd40;
+}
+
+.gogo-product-info .right .address .lj {
+  color: #febd40;
+}
+
+.gogo-product-info .right .address .box {
+  width: 150px;
+  height: 28px;
+  border: 1px solid #e4e4e4;
+  display: inline-block;
+  line-height: 26px;
+  text-align: center;
+  margin-left: 10px;
+  background: #fff;
+}
+
+.gogo-product-info .right .attrs {
+  padding: 0 10px;
+}
+
+.gogo-product-info .right .attrs img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border: 1px dashed transparent;
+  cursor: pointer;
+}
+
+.gogo-product-info .right .attrs img.active, .gogo-product-info .right .attrs img:hover {
+  border-color: #febd40;
+}
+
+.gogo-product-info .right .attrs .size {
+  border: 1px solid #e4e4e4;
+  padding: 5px 25px;
+  display: inline-block;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.gogo-product-info .right .attrs .size.active, .gogo-product-info .right .attrs .size:hover {
+  border-color: #febd40;
+}
+
+.gogo-product-info .right .attrs .num {
+  width: 116px;
+  height: 28px;
+  border: 1px solid #e4e4e4;
+  display: flex;
+}
+
+.gogo-product-info .right .attrs .num input {
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  width: 60px;
+  line-height: 26px;
+  text-align: center;
+  color: #979797;
+}
+
+.gogo-product-info .right .attrs .num a {
+  width: 28px;
+  text-align: center;
+  line-height: 26px;
+  color: #979797;
+}
+
+.gogo-product-info .right .item {
+  color: #999;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.gogo-product-info .right .item .dt {
+  width: 50px;
+}
+
+.gogo-product-info .right .item .dd {
+  flex: 1;
+  color: #666;
+}
+
+.gogo-product-info .right .buy {
+  width: 220px;
+  height: 50px;
+  background: #febd40;
+  border-radius: 4px;
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.gogo-relevant-product {
+  background: #fff;
+  margin: 20px 0;
+  padding: 30px 28px;
+  position: relative;
+}
+
+.gogo-relevant-product h3 {
+  font-weight: normal;
+  font-size: 20px;
+  padding-bottom: 8px;
+  padding-left: 25px;
+}
+
+.gogo-relevant-product .prev,
+.gogo-relevant-product .next {
+  position: absolute;
+  top: 200px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #dbdbdb;
+}
+
+.gogo-relevant-product .prev span,
+.gogo-relevant-product .next span {
+  font-size: 30px;
+}
+
+.gogo-relevant-product .prev {
+  left: 0;
+}
+
+.gogo-relevant-product .next {
+  right: 0;
+}
+
+.gogo-relevant-product ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gogo-relevant-product ul li {
+  width: 278px;
+  height: 360px;
+  text-align: center;
+}
+
+.gogo-relevant-product ul li img {
+  width: 190px;
+  height: 190px;
+  margin-top: 25px;
+}
+
+.gogo-relevant-product ul li .name {
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.gogo-relevant-product ul li .desc {
+  color: #999;
+  line-height: 50px;
+}
+
+.gogo-relevant-product ul li .price {
+  color: #CF4444;
+  font-size: 18px;
+  line-height: 50px;
+}
+
+.gogo-product-detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gogo-product-detail .main {
+  width: 942px;
+}
+
+.gogo-product-detail .main .cont {
+  background: #fff;
+}
+
+.gogo-product-detail .main .cont .tab-head {
+  height: 70px;
+  line-height: 70px;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 18px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.gogo-product-detail .main .cont .tab-head a {
+  margin-right: 80px;
+}
+
+.gogo-product-detail .main .cont .tab-head a span {
+  color: #CF4444;
+}
+
+.gogo-product-detail .main .cont .tab-head::before {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 1px;
+  background: #f5f5f5;
+  top: 0;
+  left: 135px;
+}
+
+.gogo-product-detail .main .cont .tab-pane .attrs {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gogo-product-detail .main .cont .tab-pane .attrs .item {
+  width: 25%;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.gogo-product-detail .main .cont .tab-pane .attrs .item span:first-child {
+  width: 75px;
+  color: #999;
+}
+
+.gogo-product-detail .main .cont .tab-pane .attrs .item span:last-child {
+  flex: 1;
+  color: #666;
+}
+
+.gogo-product-detail .main .cont .tab-pane .detail {
+  padding: 25px;
+  text-align: center;
+}
+
+/*  选项卡切换显示底部线条*/
+.gogo-product-detail .main .cont .tab-head a.active2[data-underline]:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 72px;
+  height: 2px;
+  background-color: #febd40;
+}
+
+.gogo-product-detail .main .cont .tab-head a[data-underline] {
+  margin-right: 80px;
+  display: inline-block;
+  position: relative;
+}
+/*  */
+
+
+.gogo-product-detail .main .warn {
+  margin-top: 20px;
+  background: #fff;
+  padding-bottom: 40px;
+}
+
+.gogo-product-detail .main .warn h3 {
+  height: 80px;
+  line-height: 80px;
+  border-bottom: 1px solid #f5f5f5;
+  padding-left: 50px;
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.gogo-product-detail .main .warn p {
+  line-height: 40px;
+  padding-left: 25px;
+  color: #666;
+}
+
+.gogo-product-detail .main .warn p.tit {
+  color: #333;
+}
+
+.gogo-product-detail .aside {
+  width: 278px;
+}
+
+.gogo-product-detail .aside .tit {
+  width: 278px;
+  height: 70px;
+  background: #E26237;
+  color: #fff;
+  font-size: 18px;
+  line-height: 70px;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.gogo-product-detail .aside .product {
+  margin-bottom: 10px;
+  background: #fff;
+  width: 278px;
+  height: 360px;
+  text-align: center;
+}
+
+.gogo-product-detail .aside .product img {
+  width: 190px;
+  height: 190px;
+  margin-top: 25px;
+}
+
+.gogo-product-detail .aside .product .name {
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.gogo-product-detail .aside .product .desc {
+  color: #999;
+  line-height: 50px;
+}
+
+.gogo-product-detail .aside .product .price {
+  color: #CF4444;
+  font-size: 18px;
+  line-height: 50px;
+}
+
+.gogo-product-detail .aside .special {
+  background: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.gogo-product-detail .aside .special img {
+  width: 278px;
+  height: 212px;
+}
+
+.gogo-product-detail .aside .special .name {
+  font-size: 18px;
+  padding: 24px 0;
+}
+
+
+/* 评论内容 */
+.goods-comment[data-Highlight] {
+  min-height: 400px;
+  padding-top: 5px;
+}
+.goods-comment .comment-list[data-Highlight] {
+  padding: 10px;
+}
+.goods-comment .comment-list .sort[data-Highlight] {
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+}
+.goods-comment .comment-list .sort span.active[data-Highlight],
+.goods-comment .comment-list .sort span[data-Highlight]:hover {
+  color: #febd40;
+}
+
+.goods-comment .comment-list .sort span[data-Highlight] {
+  padding-left: 40px;
+  cursor: pointer;
+}
+
+
+/* 头部隐藏导航栏 */
+.big-hiddenHeader {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 1999;
+  background-color: #fff;
+  border-bottom: 1px solid #e4e4e4;
+  transform: translateY(-100%);
+  opacity: 1;
+}
+
+.show {
+  transition: all .3s linear;
+  transform: none;
+  opacity: 1;
+}
+
+.gogo-hiddenHeader {
+  display: flex;
+  align-items: center;
+  width: 1220px;
+  height: 80px;
+}
+
+/* 因为a标签是行内元素 不能修改宽高 只有块级元素可以修改
+        有三种方法 浮动 定位 display*/
+.gogo-hiddenHeader .logo {
+  float: left;
+  width: 200px;
+  height: 80px;
+  background: url("../images/logo.png") no-repeat left 2px;
+  background-size: 160px auto;
+}
+
+h1 {
+  /* float: left; */
+  width: 200px;
+  height: 80px;
+}
+
+.gogo-hiddenHeader ul {
+  display: flex;
+  justify-content: space-around;
+  width: 820px;
+  padding-left: 10px;
+  border-right: 1px solid black;
+}
+
+.gogo-hiddenHeader li {
+  display: list-item;
+  width: 40px;
+  margin-right: 40px;
+  font-size: 16px;
+}
+
+.right {
+  padding-left: 40px;
+}
+
+.right a {
+  font-size: 16px;
+
+}
+
+.gogo-hiddenHeader li:hover a,
+.gogo-hiddenHeader li.active a {
+  color: #febd40;
+}
+
+.gogo-hiddenHeader li:after {
+  content: '';
+  display: none;
+  width: 30px;
+  height: 2px;
+  background-color: #febd40;
+  position: absolute;
+  bottom: 25px;
+}
+
+.gogo-hiddenHeader li:hover:after,
+.gogo-hiddenHeader li.active:after {
+  display: block;
+}
+
+
+/* 发布评论区域 */
+.main-reply-box {
+  display: flex;
+  width: 800px;
+  flex-direction: column;
+}
+
+.reply-box {
+  display: flex;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+.reply-box-avatar {
+  width: 120px;
+  height: 50px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.reply-box-avatar .pic {
+  width: 100%;
+  height: 100%;
+}
+
+.reply-box-avatar .pic img {
+  border-radius: 50%;
+}
+
+.reply-box-warp {
+  display: flex;
+  width: 500px;
+}
+
+.reply-box-warp textarea {
+  width: 100%;
+  height: 50px;
+  resize: none;
+  line-height: 30px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  background-color: #f1f2f3;
+  border: 1px solid #f1f2f3;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.reply-box-warp textarea:hover {
+  background-color: #fff;
+  border-color: #C9CCD0;
+}
+
+.reply-box-warp textarea.show {
+  height: 65px;
+  background-color: #fff;
+  border-color: #C9CCD0;
+  transition: all 0.3s;
+}
+
+.reply-box-send {
+  display: flex;
+  width: 70px;
+  height: 50px;
+  margin-left: 10px;
+  background-color: rgba(254, 189, 64, .5);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.reply-box-send.focus {
+  height: 65px;
+  background-color: rgba(254, 189, 64, .5);
+
+}
+.reply-box-send:hover {
+  background-color: #febd40 !important;
+
+}
+
+.reply-box-send.send-active {
+  background-color: #febd40;
+
+}
+
+
+/* 评论内容区域 */
+.reply-item {
+  display: flex;
+  border-bottom: 1px dashed #e4e4e4;
+  margin-top: 20px;
+}
+
+.reply-item .reply-content .user-name {
+  color: #febd40;
+  font-weight: 700;
+}
+
+.reply-item .reply-content .reply-content-text {
+  padding: 10px 0;
+}
+
+.reply-item .reply-content .time {
+  color: #999;
+  font-size: 12px;
+}

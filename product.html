@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GOGO购 - 新鲜 惠民 快捷!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/product.css">
+  <link rel="shortcut icon" href="icon.png">
+  <script src="./js/data.js"></script>
+  <script defer src="./js/productDataRender.js"></script>
+  <script src="./js/hiddenHeader.js"></script>
+  <script src="./js/topShow.js"></script>
+  <script src="./js/product.js"></script>
+  <script src="./js/plugins/jquery-3.6.2.min.js"></script>
+  <script src="./js/plugins/swiper-bundle.min.js"></script>
+  <style>
+    /* 购物车头部 */
+    .gogo-shop-car {
+      margin-top: 20px;
+      padding: 30px 28px 50px;
+      background-color: #ffffff;
+    }
+
+    .gogo-shop-car h3 {
+      font-weight: normal;
+      font-size: 20px;
+      padding-bottom: 8px;
+      padding-left: 25px;
+    }
+
+    .gogo-shop-car .car-header {
+      font-size: 18px;
+      border-bottom: 1px solid #d8d0d0;
+    }
+
+    .gogo-shop-car .all {
+      display: flex;
+      width: 500px;
+    }
+
+    .gogo-shop-car .all .checkbox {
+      margin-right: 5px;
+    }
+
+    .gogo-shop-car .all .car-goods {
+      margin-left: 50px;
+    }
+
+    .gogo-shop-car .goods-info {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .gogo-shop-car .goods-info div {
+      width: 100px;
+    }
+
+    /* 
+      购物车内容
+    */
+    .gogo-shop-car .car-list {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .gogo-shop-car .car-list .option {
+      display: flex;
+      width: 500px;
+    }
+
+    .gogo-shop-car .car-list .checkbox {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .gogo-shop-car .car-list .goods {
+      display: flex;
+      width: 68px;
+      height: 68px;
+      margin-left: 55px;
+      flex: auto;
+
+    }
+
+    .gogo-shop-car .car-list .goods .info {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .gogo-shop-car .car-list .goods-info {
+      display: flex;
+      height: 68px;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .gogo-shop-car .car-list .goods-info .subtotal {
+      color: #CF4444;
+    }
+
+    .gogo-shop-car .car-list .goods-info div {
+      justify-items: center;
+      align-items: center;
+      line-height: 68px;
+      height: 68px;
+    }
+
+    .gogo-shop-car .car-list .car-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #d8d0d0;
+    }
+
+    .gogo-shop-car .total {
+      margin: 10px 10px 0 10px;
+      font-size: 18px;
+    }
+
+    .gogo-shop-car .total span {
+      color: #CF4444;
+
+    }
+  </style>
+</head>
+<body>
+  <!-- 项部导航 -->
+  <div class="gogo_topnav">
+    <div class="wrapper">
+      <!-- 顶部导航 -->
+      <ul class="gogo_navs">
+        <li>
+          <a href="./login.html">请先登录</a>
+        </li>
+        <li>
+          <a href="#">免费注册</a>
+        </li>
+        <li>
+          <a href=".#">我的订单</a>
+        </li>
+        <li>
+          <a href="#">会员中心</a>
+        </li>
+        <li>
+          <a href="#">帮助中心</a>
+        </li>
+        <li>
+          <a href="#">在线客服</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="mobile sprites"></i>
+            手机版
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 头部 -->
+  <div class="gogo_header">
+    <div class="wrapper">
+      <!-- 网站Logo -->
+      <h1 class="gogo_logo"><a href="./index.html">GOGO购</a></h1>
+      <!-- 主导航 -->
+      <div class="gogo_navs">
+        <ul class="clearfix">
+          <li>
+            <a href="./index.html">首页</a>
+          </li>
+          <li>
+            <a href="#">生鲜</a>
+          </li>
+          <li>
+            <a href="#">美食</a>
+          </li>
+          <li>
+            <a href="#">餐厨</a>
+          </li>
+          <li>
+            <a href="#">电器</a>
+          </li>
+          <li>
+            <a href="#">居家</a>
+          </li>
+          <li>
+            <a href="#">洗护</a>
+          </li>
+          <li>
+            <a href="#">孕婴</a>
+          </li>
+          <li>
+            <a href="#">服装</a>
+          </li>
+        </ul>
+      </div>
+      <!-- 站内搜索 -->
+      <div class="gogo_search clearfix">
+        <!-- 购物车 -->
+        <a href="#" class="gogo_search_cart sprites">
+          <i>2</i>
+        </a>
+        <!-- 搜索框 -->
+        <div class="gogo_search_wrapper">
+          <input type="text" placeholder="搜一搜">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 顶部隐藏导航栏 wrapper版心 -->
+  <div class="big-hiddenHeader">
+    <div class="gogo-hiddenHeader wrapper">
+      <h1><a href="./index.html" class="logo"></a></h1>
+      <ul class="">
+        <li>
+          <a href="">首页</a>
+        </li>
+        <li>
+          <a href="">居家</a>
+        </li>
+        <li>
+          <a href="">美食</a>
+        </li>
+        <li>
+          <a href="">服饰</a>
+        </li>
+        <li>
+          <a href="">母婴</a>
+        </li>
+        <li>
+          <a href="">个护</a>
+        </li>
+        <li>
+          <a href="">严选</a>
+        </li>
+        <li>
+          <a href="">数码</a>
+        </li>
+        <li>
+          <a href="">运动</a>
+        </li>
+        <li>
+          <a href="">杂项</a>
+        </li>
+      </ul>
+      <div class="right">
+        <a href="">品牌</a>
+        <a href="">专题</a>
+      </div>
+    </div>
+  </div>
+  <!-- 版心 -->
+  <div class="gogo-wrapper">
+    <div class="container">
+      <!-- 面包屑 -->
+      <div class="gogo-bread">
+        <!-- <a href="#"> 首页 > </a>
+        <a href="#"> 厨具 > </a>
+        <a href="#"> 茶具 > </a> -->
+        <!-- <span>高级茶壶</span> -->
+      </div>
+      <!-- 商品信息 -->
+      <div class="gogo-product-info">
+        <div class="left">
+          <div class="picture">
+            <div class="middle">
+              <img src="./images/1.jpg" alt="">
+              <div class="layer"></div>
+            </div>
+            <div class="small">
+              <ul>
+                <!-- <li class="active"><img src="./images/1.jpg" alt=""></li>
+                <li><img src="./images/2.jpg" alt=""></li>
+                <li><img src="./images/3.jpg" alt=""></li>
+                <li><img src="./images/4.jpg" alt=""></li>
+                <li><img src="./images/5.jpg" alt=""></li> -->
+              </ul>
+            </div>
+            <div class="large" style="background-image: url(./images/1.jpg);"></div>
+          </div>
+          <!-- <div class="other">
+            <ul>
+              <li>
+                <p>销量人气</p>
+                <p>1999+</p>
+                <p>销量人气</p>
+              </li>
+              <li>
+                <p>商品评价</p>
+                <p>999+</p>
+                <p>查看评价</p>
+              </li>
+              <li>
+                <p>收藏人气</p>
+                <p>299+</p>
+                <p><a href="#">收藏商品</a></p>
+              </li>
+              <li>
+                <p>品牌信息</p>
+                <p>茶壶</p>
+                <p><a href="#">品牌主页</a></p>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        <div class="right">
+          <!-- <h3 class="name">高级茶壶</h3>
+          <p class="desc">功夫茶具 / 开片可养 / 手工家用 </p>
+          <p class="price"><span class="now">¥1899</span><span class="old">¥2999</span></p>
+          <div class="address">
+            <div class="item">
+              <div class="dt">促销</div>
+              <div class="dd">12月好物放送，App领券购买直降120元</div>
+            </div>
+            <div class="item">
+              <div class="dt">配送</div>
+              <div class="dd">至
+                <div class="box">
+                  <span>浙江 杭州 <i></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dt">服务</div>
+              <div class="dd">
+                <span class="fw">无忧退货</span>
+                <span class="fw">快速退款</span>
+                <span class="fw">免费包邮</span>
+                <a href="#" class="lj">了解详情</a>
+              </div>
+            </div>
+          </div>
+          <div class="attrs">
+            <div class="item">
+              <div class="dt">颜色</div>
+              <div class="dd">
+                <img src="./uploads/product_color_green.png" alt="">
+                <img src="./uploads/product_color_red.png" alt="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="dt">大小</div>
+              <div class="dd">
+                <span class="size">100毫升</span>
+                <span class="size">120毫升</span>
+                <span class="size">140毫升</span>
+                <span class="size">160毫升</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="dt">数量</div>
+              <div class="dd">
+                <div class="num">
+                  <a href="#">-</a>
+                  <input type="text" value="1">
+                  <a href="#">+</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <a class="buy" href="#">加入购物车</a>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <!-- 购物车模块 -->
+      <div class="gogo-shop-car">
+        <h3>购物车</h3>
+        <div class="car-header">
+          <div class="all fl">
+            <input type="checkbox" class="checkbox"><span class="check-all">全选</span>
+            <div class="car-goods">产品</div>
+          </div>
+          <div class="goods-info">
+            <div class="car-price">单价</div>
+            <div class="car-number">数量</div>
+            <div class="Subtotal">小计</div>
+            <div class="car-control">操作</div>
+          </div>
+        </div>
+        <!-- 商品列表 -->
+        <div class="car-list">
+          <!-- <div class="car-item">
+            <div class="option fl">
+              <input type="checkbox" class="checkbox">
+              <div class="goods">
+                <img src="./uploads/car-shop-goods1.jpg" alt="">
+                <div class="info">
+                  <p class="name">原创设计一体化</p>
+                </div>
+              </div>
+            </div>
+            <div class="goods-info">
+              <div class="car-price">￥100</div>
+              <div class="car-number">1</div>
+              <div class="subtotal">￥100</div>
+              <div class="car-control"><a href="javascript:;">删除</a></div>
+            </div>
+          </div> -->
+        </div>
+        <div class="total fr">总计：<span>￥0</span></div>
+
+      </div>
+      <!-- 同类产品推荐 -->
+      <div class="gogo-relevant-product">
+        <h3>同类产品推荐</h3>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="./uploads/history_goods_1.jpg" alt="">
+              <p class="name">便宜衣服</p>
+              <p class="desc">贴身柔软舒适</p>
+              <p class="price">¥39</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./uploads/history_goods_2.jpg" alt="">
+              <p class="name">贵的鞋子</p>
+              <p class="desc"> 科技轻便缓震舒适训练跑步鞋</p>
+              <p class="price">¥1899</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./uploads/history_goods_3.jpg" alt="">
+              <p class="name">便宜包包</p>
+              <p class="desc">出门必备</p>
+              <p class="price">¥19</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./uploads/history_goods_4.jpg" alt="">
+              <p class="name">贵的衣服</p>
+              <p class="desc">小个子气质显瘦</p>
+              <p class="price">¥4899</p>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="prev"><span class="iconfont icon-angle-left"></span></a>
+        <a href="#" class="next"><span class="iconfont icon-angle-right"></span></a>
+      </div>
+      <!-- 商品详情 -->
+      <div class="gogo-product-detail">
+        <div class="main">
+          <div class="cont">
+            <div class="tab-head">
+              <a href="javascript:;" data-underline class="active2">商品详情</a>
+              <a href="javascript:;" data-underline>商品评价<span>（998+）</span></a>
+            </div>
+            <div class="tab-pane">
+              <!-- 静态属性 -->
+              <div class="attrs">
+                <div class="item"><span>商品名称：</span><span>高级茶壶 </span></div>
+                <div class="item"><span>商品编号：</span><span>4620979 </span></div>
+                <div class="item"><span>商品毛重：</span><span>1.0kg </span></div>
+                <div class="item"><span>商品产地：</span><span>中国大陆 </span></div>
+                <div class="item"><span>选购指数：</span><span>6.9-6.0 </span></div>
+                <div class="item"><span>是否手工：</span><span>纯手工</span></div>
+                <div class="item"><span>店铺：</span><span>茶壶</span></div>
+              </div>
+              <!-- 详情内容 -->
+              <div class="detail">
+                <img src="./uploads/detail-goods1.jpg" alt="">
+                <img src="./uploads/detail-goods2.jpg" alt="">
+                <img src="./uploads/detail-goods3.jpg" alt="">
+                <img src="./uploads/detail-goods4.jpg" alt="">
+                <img src="./uploads/detail-goods5.jpg" alt="">
+                <img src="./uploads/detail-goods6.jpg" alt="">
+
+              </div>
+            </div>
+            <!-- 商品评价内容 -->
+            <div class="tab-pane" style="display: none;">
+              <div data-Highlight="" class="goods-comment" id="1001">
+                <div data-Highlight="" class="comment-list">
+                  <div data-Highlight="" class="sort">排序：<span data-Highlight="" class="active">最热</span><span
+                      data-Highlight="">最新</span></div>
+                  <!-- 评论发布区域 -->
+                  <div class="main-reply-box">
+                    <div class="reply-box">
+                      <div class="reply-box-avatar">
+                        <div class="pic">
+                          <img src="icon.png" alt="">
+                        </div>
+                      </div>
+                      <div class="reply-box-warp">
+                        <textarea class="reply-box-textarea" placeholder="发布评论" maxlength="200"></textarea><br>
+                      </div>
+                      <div class="reply-box-send">
+                        <div>发布</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 评论发布内容 -->
+                  <div class="reply-list">
+                    <div class="reply-item">
+                      <div class="reply-box-avatar">
+                        <div class="pic">
+                          <img src="icon.png" alt="">
+                        </div>
+                      </div>
+                      <div class="reply-content">
+                        <p class="user-name">有铸币</p>
+                        <p class="reply-content-text">哈哈哈</p>
+                        <p class="time">2022-12-10 20:29:21</p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- 注意事项 -->
+          <div class="warn">
+            <h3>注意事项</h3>
+            <p class="tit">• 购买运费如何收取？ </p>
+            <p>单笔订单金额(不含运费)满88元免邮费；不满88元，每单收取10元运费。（港澳台地区需满500元免邮费；不满500元，每单收取30元运费) </p>
+            <br>
+            <br>
+            <p class="tit">• 使用什么快递发货? </p>
+            <p>默认使用顺丰快递发货(个别商品使用其他快递） </p>
+            <p>配送范围覆盖全国大部分地区(港澳台地区除外）。 </p>
+            <br>
+            <br>
+            <p class="tit">• 如何申请退货? </p>
+            <p>1.自收到商品之日起30日内，顾客可申请无忧退货，退款将原路返还，不同的银行处理时间不同，预计1-5个工作日到账； </p>
+            <p>2.内裤和食品等特殊商品无质量问题不支持退货； </p>
+            <p>3.退货流程： 确认收货-申请退货-客服审核通过-用户寄回商品-仓库签收验货-退款审核-退款完成； </p>
+            <p>4.因GOGO购产生的退货，如质量问题，退货邮费由GOGO购承担，退款完成后会以现金券的形式报销。因客户个人原因产生的退货，购买和寄回运费由客户个人承担。</p>
+          </div>
+        </div>
+        <div class="aside">
+          <div class="tit">24小时热销榜</div>
+          <div class="product">
+            <img src="./uploads/discuss_goods_2.jpg" alt="">
+            <p class="name">USB Type C数据线</p>
+            <p class="desc">快速充电，稳定传输</p>
+            <p class="price">¥29</p>
+          </div>
+          <div class="product">
+            <img src="./uploads/discuss_goods_2.jpg" alt="">
+            <p class="name">USB Type C数据线</p>
+            <p class="desc">快速充电，稳定传输</p>
+            <p class="price">¥29</p>
+          </div>
+          <div class="product">
+            <img src="./uploads/discuss_goods_2.jpg" alt="">
+            <p class="name">USB Type C数据线</p>
+            <p class="desc">快速充电，稳定传输</p>
+            <p class="price">¥29</p>
+          </div>
+          <div class="tit">专题推荐</div>
+          <div class="special">
+            <img src="./uploads/discuss_goods_1.jpg" alt="">
+            <p class="name">一往无前，诞生于崛起</p>
+          </div>
+          <div class="special">
+            <img src="./uploads/discuss_goods_1.jpg" alt="">
+            <p class="name">一往无前，诞生于崛起</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 公共底部 -->
+  <div class="gogo_footer clearfix">
+    <div class="wrapper">
+      <!-- 联系我们 -->
+      <div class="contact clearfix">
+        <dl>
+          <dt>客户服务</dt>
+          <dd class="chat">在线客服</dd>
+          <dd class="feedback">问题反馈</dd>
+        </dl>
+        <dl>
+          <dt>关注我们</dt>
+          <dd class="weixin">公众号</dd>
+          <dd class="weibo">微博</dd>
+        </dl>
+        <dl>
+          <dt>下载APP</dt>
+          <dd class="qrcode">
+            <img src="./uploads/qrcode.jpg">
+          </dd>
+          <dd class="download">
+            <span>扫描二维码</span>
+            <span>立马下载APP</span>
+            <a href="#">下载页面</a>
+          </dd>
+        </dl>
+        <dl>
+          <dt>服务热线</dt>
+          <dd class="hotline">
+            400-0000-000
+            <small>周一至周日 8:00-18:00</small>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <!-- 其它 -->
+    <div class="extra">
+      <div class="wrapper">
+        <!-- 口号 -->
+        <div class="slogan">
+          <a href="#" class="price">价格亲民</a>
+          <a href="#" class="express">物流快捷</a>
+          <a href="#" class="quality">品质新鲜</a>
+        </div>
+        <!-- 版权信息 -->
+        <div class="copyright">
+          <p>
+            <a href="#">关于我们</a>
+            <a href="#">帮助中心</a>
+            <a href="#">售后服务</a>
+            <a href="#">配送与验收</a>
+            <a href="#">商务合作</a>
+            <a href="#">搜索推荐</a>
+            <a href="#">友情链接</a>
+          </p>
+          <p>CopyRight &copy; GOGO购</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
